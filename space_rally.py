@@ -233,7 +233,7 @@ def tulemus(punktid):
 
 def salvesta(punktid,nimi,tulemus):
     # tulemuse salvestamine
-    f = open('rekord.txt', "a")
+    f = open(os.path.join("data","rekord.txt"), "a")
     value = str(punktid) + " " + str(nimi.get()) + " "+ str(spinval.get())+"\n"
     s = str(value)
     f.write(s)
@@ -245,7 +245,7 @@ def salvesta(punktid,nimi,tulemus):
     startnupp() #teeb uuesti start nuppu
     
 def n2ita_rekord():
-    f = open('rekord.txt', "r")
+    f = open(os.path.join("data",'rekord.txt'), "r")
     record_tabel1 = []
     record_tabel2 = []
     record_tabel3 = []
@@ -344,37 +344,37 @@ tase.place(x=30, y=460)
 
 
 #tekitab raketi
-rakett = PhotoImage(file="rocket.gif")
+rakett = PhotoImage(file=os.path.join("data","rocket.gif"))
 img = tahvel.create_image(250, 480, image=rakett)
 
 t2hed = []
 #loob tähed (hulk tähti ja järjendisse)
-t2ht = PhotoImage(file="star.gif")
+t2ht = PhotoImage(file=os.path.join("data","star.gif"))
 for i in range (t2htede_arv):
     t2he_id=tahvel.create_image(random.randrange(0,500),random.randrange(-500,-20), image = t2ht)
     t2hed.append(t2he_id)
 
 #loob suure tähe
-suur_t2ht = PhotoImage(file="star2.gif")
+suur_t2ht = PhotoImage(file=os.path.join("data","star2.gif"))
 suur_t2ht_id = tahvel.create_image(-200, -200, image=suur_t2ht)
 
 kivid = []
 #loob kivid (hulk kivisid ja järjendisse)
-kivi = PhotoImage(file="asteroid.gif")
+kivi = PhotoImage(file=os.path.join("data","asteroid.gif"))
 for i in range (kivide_arv):
     kivi_id=tahvel.create_image(random.randrange(0,500),random.randrange(-500,-50), image = kivi)
     kivid.append(kivi_id)
 
 #loob ufo 
-ufo = PhotoImage(file="ufo.gif")
+ufo = PhotoImage(file=os.path.join("data","ufo.gif"))
 ufo_id=tahvel.create_image(-200,-200, image = ufo)
 #loob ufo 
-ufo2 = PhotoImage(file="ufo2.gif")
+ufo2 = PhotoImage(file=os.path.join("data","ufo2.gif"))
 ufo2_id=tahvel.create_image(-200,-200, image = ufo2)
 
 #loob kuulid
 kuulid = []
-kuul = PhotoImage(file="bullet.gif")
+kuul = PhotoImage(file=os.path.join("data","bullet.gif"))
 for i in range (10):
     kuul_id=tahvel.create_image(-200,-200, image = kuul)
     kuulid.append(kuul_id)
@@ -383,22 +383,22 @@ for i in range (10):
 kuul_id=tahvel.create_image(-200,-200, image = kuul)
 
 #loob plahvatuse 
-plahvatus = PhotoImage(file="plahvatus.gif")
+plahvatus = PhotoImage(file=os.path.join("data","plahvatus.gif"))
 plahvatus_id=tahvel.create_image(-200,-200, image = plahvatus)
 
 #loob plahvatuse2 
-plahvatus2 = PhotoImage(file="plahvatus2.gif")
+plahvatus2 = PhotoImage(file=os.path.join("data","plahvatus2.gif"))
 plahvatus2_id=tahvel.create_image(-200,-200, image = plahvatus2)
 
 pun_t2hed = []
 #loob punased tähed (hulk tähti ja järjendisse)
-pun_t2ht = PhotoImage(file="redstar.gif")
+pun_t2ht = PhotoImage(file=os.path.join("data","redstar.gif"))
 for i in range (pun_t2htede_arv):
     pun_t2he_id=tahvel.create_image(random.randrange(0,500),random.randrange(-1500,-20), image = pun_t2ht)
     pun_t2hed.append(pun_t2he_id)
 
 #loob suure punasetähe
-suur_pun_t2ht = PhotoImage(file="redstar2.gif")
+suur_pun_t2ht = PhotoImage(file=os.path.join("data","redstar2.gif"))
 suur_pun_t2ht_id = tahvel.create_image(-200, -200, image=suur_pun_t2ht)
     
 # loome aja jaoks nimesildi
