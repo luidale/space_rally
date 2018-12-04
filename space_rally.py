@@ -5,9 +5,13 @@ from tkinter import ttk
 import time
 import random
 import math
-import winsound
 import _thread
 import os
+import platform
+
+if platform.platform().find("Windows") != -1:
+    import winsound
+
 
 #juhtnuppude funktsioonid
 def nool_üles(event):
@@ -39,9 +43,11 @@ def tulista(event):
             _thread.start_new_thread(h22l,(500,100))
             return
 
-def h22l(sagedus,pikkus):   
-    winsound.Beep(sagedus,pikkus)
-    
+def h22l(sagedus,pikkus):
+    if platform.platform().find("Windows") != -1:
+        winsound.Beep(sagedus,pikkus)
+    else:
+        pass
     
 
 def tulista_abi(kuul,plahvatuse_aeg):
